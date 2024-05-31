@@ -1,35 +1,40 @@
 call plug#begin('~/.config/nvim/plugged')
-" below are some vim plugins for demonstration purpose.
-" add the plugin you want to use here.
+
+" OneDark
 Plug 'joshdick/onedark.vim'
+
+"NeoSolarized
 Plug 'iCyMind/NeoSolarized'
 
+" Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" TS
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " LSP Support
-Plug 'neovim/nvim-lspconfig'             " Required
-Plug 'williamboman/mason.nvim'           " Optional
-Plug 'williamboman/mason-lspconfig.nvim' " Optional
+Plug 'neovim/nvim-lspconfig'             
+Plug 'williamboman/mason.nvim'          
+Plug 'williamboman/mason-lspconfig.nvim'
 
 " Autocompletion Engine
-Plug 'hrsh7th/nvim-cmp'         " Required
-Plug 'hrsh7th/cmp-nvim-lsp'     " Required
-Plug 'hrsh7th/cmp-buffer'       " Optional
-Plug 'hrsh7th/cmp-path'         " Optional
-Plug 'saadparwaiz1/cmp_luasnip' " Optional
-Plug 'hrsh7th/cmp-nvim-lua'     " Optional
+Plug 'hrsh7th/nvim-cmp'         
+Plug 'hrsh7th/cmp-nvim-lsp'    
+Plug 'hrsh7th/cmp-buffer'      
+Plug 'hrsh7th/cmp-path'        
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'hrsh7th/cmp-nvim-lua'    
 
 "  Snippets
-Plug 'L3MON4D3/LuaSnip'             " Required
-Plug 'rafamadriz/friendly-snippets' " Optional
+Plug 'L3MON4D3/LuaSnip'             
+Plug 'rafamadriz/friendly-snippets'
 
 
-" lsp
+" LSP
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v1.x'}
 
-" transparent bg
+" Transparent Background w/ Picom
 Plug 'xiyaowong/transparent.nvim'
 set termguicolors
 
