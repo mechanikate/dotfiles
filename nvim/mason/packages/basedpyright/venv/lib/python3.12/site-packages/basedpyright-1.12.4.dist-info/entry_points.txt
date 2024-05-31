@@ -1,0 +1,4 @@
+[console_scripts]
+basedpyright = basedpyright.pyright:main
+basedpyright-langserver = basedpyright.langserver:main
+

@@ -1,0 +1,1 @@
+{"metrics":{"start_time":1717016508458,"completion_time":1717016511996},"secondary_sources":[],"schema_version":"1.1","links":{"share":{},"bin":{"markdownlint":"node_modules\/.bin\/markdownlint"},"opt":{}},"primary_source":{"type":"registry+v1","id":"pkg:npm\/markdownlint-cli@0.41.0"},"name":"markdownlint"}

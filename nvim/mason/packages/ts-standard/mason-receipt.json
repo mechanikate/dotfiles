@@ -1,0 +1,1 @@
+{"metrics":{"start_time":1717016545541,"completion_time":1717016561264},"secondary_sources":[],"schema_version":"1.1","links":{"share":{},"bin":{"ts-standard":"node_modules\/.bin\/ts-standard"},"opt":{}},"primary_source":{"type":"registry+v1","id":"pkg:npm\/ts-standard@12.0.2"},"name":"ts-standard"}
