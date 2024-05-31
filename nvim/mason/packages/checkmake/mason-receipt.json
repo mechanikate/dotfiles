@@ -1,1 +1,0 @@
-{"metrics":{"start_time":1717016429636,"completion_time":1717016430763},"secondary_sources":[],"schema_version":"1.1","links":{"share":{"man\/man1\/checkmake.1":"man1\/checkmake.1"},"bin":{"checkmake":"checkmake-0.2.2.linux.amd64"},"opt":{}},"primary_source":{"type":"registry+v1","id":"pkg:github\/mrtazz\/checkmake@0.2.2"},"name":"checkmake"}
