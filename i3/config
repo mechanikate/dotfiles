@@ -193,8 +193,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 gaps inner 35
 exec_always --no-startup-id polybar example
+exec_always --no-startup-id picom --config /home/kate/.config/picom.conf 
 # blur
-exec --no-startup-id picom -CGb --blur-method dual_kawase --blur-strength 7
+exec --no-startup-id picom --config /home/kate/.config/picom.conf 
 exec feh --bg-scale ~/wallpaper/sylveon.jpg
 ## Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
