@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/zsh
 
 bar="▁▂▃▄▅▆▇█"
 dict="s/;//g;"
@@ -16,7 +16,8 @@ config_file="/tmp/polybar_cava_config"
 echo "
 [input]
 method = pulse
-source = 4
+source = ${$(echo "${${$(pacmd list-sources | grep -C 1 -e analog-stereo.monitor )}// /}" | grep -e 'index:')/index:/}
+
 [general]
 bars = 15
 
