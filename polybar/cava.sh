@@ -19,7 +19,7 @@ method = pulse
 source = ${$(echo "${${$(pacmd list-sources | grep -C 1 -e analog-stereo.monitor )}// /}" | grep -e 'index:')/index:/}
 
 [general]
-bars = 15
+bars = 70
 
 [output]
 method = raw
