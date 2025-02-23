@@ -1,0 +1,2 @@
+#!/bin/bash
+hyfetch --ascii ~/.config/sylveon.txt
