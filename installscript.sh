@@ -8,6 +8,8 @@ fi
 
 echo -e "$PBG Installing packages ...$RST"
 sudo pacman -S stow i3-wm feh polybar neovim zsh grep sudo hyfetch git
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 echo -e "$PBG Let's move this over to ~/.config/ ...$RST"
 echo -e "$PBG Copying some files to their respective places ...$RST"
 stow wallpaper
