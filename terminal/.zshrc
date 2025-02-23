@@ -99,4 +99,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # add sylvfetch to path
-path+=('~/runnables/')
+path+=("$HOME/runnables/")
