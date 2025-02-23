@@ -26,10 +26,19 @@ done
 
 shift $((OPTIND-1))
 
+if [ ! -f ~/.installscriptdone ]; then
+	echo -e "$PBG The install script might have already been run! Would you like to continue anyways? Press Enter if so. Otherwise, Ctrl+C! $RST"
+	read -p ""
+fi
 if [[ "$i" =~ [Yy]([Ee][Ss])? ]]; then # bad regex shenanigans because I didn't want to figure out how to add flags (for case insensitivity) using just bash, equivalent to /y(es)?/i
 	echo -e "$PBG We will install the necessary packages (since -i is $i). $RST"
-	sudo pacman -S stow i3-wm feh polybar neovim zsh grep sudo hyfetch git base-devel ttf-0xproto-nerd pavucontrol # this should be everything except cava
-	git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si || ( echo -e "$PBG Installing yay failed. To proceed, press Enter. To cancel, Ctrl+C! $RST" && read -p "" ) # install yay, see https://github.com/Jguer/yay
+	sudo pacman -S stow i3-wm feh polybar neovim zsh grep sudo hyfetch git base-devel ttf-0xproto-nerd pavucontrol  && ( echo -e "$PBG Installing packages done! To proceed to installing yay, type Enter. To avoid installing yay, type just the letter 'n' and enter. $RST") || ( echo -e "$PBG Installing packages failed. To proceed to installing yay, press Enter. To not install yay but proceed, type 'n' and press Enter. To cancel, press Ctrl+C! $RST") # this should be everything except cava
+	read -p "" installyay
+	echo $installyay
+	if [[ -z "$installyay" ]] ; then
+		echo -e "$PBG Installing yay... $RST"
+		git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si || ( echo -e "$PBG Installing yay failed. To proceed, press Enter. To cancel, Ctrl+C! $RST" && read -p "" ) # install yay, see https://github.com/Jguer/yay
+	fi
 fi
 
 if ! which cava ; then  # check for cava
@@ -47,4 +56,5 @@ echo -e "$PBG Installing oh-my-zsh ...$RST"
 sh -c "$(curl -fsSL https://install.ohmyz.sh/)" # what it says on the tin, see line above
 stow terminal || ( echo -e "$PBG stow-ing terminal failed. To proceed, press Enter. To cancel, Ctrl+C! $RST" && read -p "" ) # sylvfetch, hyfetch, konsole, nvim, zsh/oh-my-zsh
 echo -e "$PBG Alright, you should be all set up! Enjoy! $RST" # all done!
+touch ~/.installscriptdone
 
