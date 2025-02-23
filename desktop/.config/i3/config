@@ -195,6 +195,7 @@ gaps inner 35
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id /home/kate/launch_polybar.sh
 exec_always --no-startup-id picom --config /home/kate/.config/picom.conf 
+exec_always --no-startup-id /home/kate/.screenlayout/setlay.sh
 # blur
 exec --no-startup-id picom --config /home/kate/.config/picom.conf 
 exec feh --bg-scale ~/wallpaper/sylveon.jpg
@@ -221,5 +222,11 @@ for_window [class="steam"] floating enable
 
 # my login script
 exec_always --no-startup-id ~/.login
-
+exec killall openrgb 
+exec_always --no-startup-id openrgb --startminimized --profile "Main" &
 default_border pixel 3
+exec_always --no-startup-id python ~/bot.py
+# Menu autoclick start/stop
+bindcode 135 exec autoclick.sh
+
+exec export LIBVA_DRIVER_NAME=nvidia

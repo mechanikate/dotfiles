@@ -1,2 +1,0 @@
-#!/bin/bash
-hyfetch --ascii /home/kate/.config/sylveon.txt

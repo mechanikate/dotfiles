@@ -1,0 +1,10 @@
+terminal/.config/nvim/mason
+terminal/.config/nvim/plugged
+terminal/.config/nvim/autoload                                                           
+terminal/.config/nvim/site
+terminal/.config/nvim/lua/nano-theme/groups
+terminal/.config/nvim/lua/lualine
+terminal/.config/nvim/lua/groups
+terminal/.config/nvim/nvim/autoload/
+terminal/.config/nvim/pack/
+addtorepo.sh

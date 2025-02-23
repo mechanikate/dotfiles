@@ -15,17 +15,18 @@ done
 config_file="/tmp/polybar_cava_config"
 echo "
 [input]
-method = pulse
-source = ${$(echo "${${$(pacmd list-sources | grep -C 1 -e analog-stereo.monitor )}// /}" | grep -e 'index:')/index:/}
-
+method = pipewire
+source = $(pactl list sources | grep -C 4 -e ": Monitor of Built-in Audio Analog Stereo" | rg '(Source #)(.*)' -or '$2')
+ 
 [general]
 bars = 70
+overshoot = 100
 
 [output]
 method = raw
 raw_target = /dev/stdout
 data_format = ascii
-ascii_max_range = 7
+ascii_max_range = 7 
 " > $config_file
 
 # read stdout from cava
