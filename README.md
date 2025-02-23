@@ -1,8 +1,13 @@
 <h1 align="center">mechanikate/dotfiles</h1>
-<img src="https://github.com/mechanikate/dotfiles/blob/main/example2.png?raw=true" alt="Example photo" />
+<img src="https://github.com/mechanikate/dotfiles/blob/main/example.png?raw=true" alt="Example photo" />
 <hr />
 
 Welcome to my dotfiles repo!
+
+## Table of Contents
+- [Installation](#installation)
+  * [Requirements](#requirements)
+  * [Using install script](#using-install-script)
 
 ## Installation 
 Installation is pretty simple.
@@ -21,9 +26,10 @@ And, if you don't have all of the added packages (e.g. [`neovim`](https://archli
 ```bash
 ./installscript.sh -i y
 ```
-Or, if you do:
+Or, if you *do* have the packages installed:
 ```bash
 ./installscript.sh
 ```
 The only time the install script *should* request sudo is when it's installing packages via `pacman` when asked to using the parameter `-i yes`.
 There is also a basic usage/help message by using `./installscript.sh -h`.
+
