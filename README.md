@@ -7,8 +7,8 @@ Welcome to my dotfiles repo!
 ## Installation 
 Installation is pretty simple.
 ### Requirements
- * `git`
- * `ssh` to clone the repository
+ * `git` to clone the repository
+ * `ssh` to enable git `ssh`-ing below
 
 ### Using install script
 Run the following in a terminal:
