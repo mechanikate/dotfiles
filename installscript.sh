@@ -56,5 +56,3 @@ echo -e "$PBG Installing oh-my-zsh ...$RST"
 sh -c "$(curl -fsSL https://install.ohmyz.sh/)" # what it says on the tin, see line above
 stow terminal || ( echo -e "$PBG stow-ing terminal failed. To proceed, press Enter. To cancel, Ctrl+C! $RST" && read -p "" ) # sylvfetch, hyfetch, konsole, nvim, zsh/oh-my-zsh
 echo -e "$PBG Alright, you should be all set up! Enjoy! $RST" # all done!
-touch ~/.installscriptdone
-
