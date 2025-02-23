@@ -1,5 +1,5 @@
 <h1 align="center">mechanikate/dotfiles</h1>
-<img src="https://github.com/mechanikate/dotfiles/blob/main/example.png?raw=true" alt="Example photo" />
+<img src="https://github.com/mechanikate/dotfiles/blob/main/example.png?raw=true" alt="Example photo" /><img src="https://github.com/mechanikate/dotfiles/blob/main/example-installscript.png?raw=true" alt="Example photo" />
 <hr />
 
 Welcome to my dotfiles repo!
