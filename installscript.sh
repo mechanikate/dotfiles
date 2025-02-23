@@ -26,7 +26,7 @@ done
 
 shift $((OPTIND-1))
 
-if [ ! -f ~/.installscriptdone ]; then
+if [ -f ~/.installscriptdone ]; then
 	echo -e "$PBG The install script might have already been run! Would you like to continue anyways? Press Enter if so. Otherwise, Ctrl+C! $RST"
 	read -p ""
 fi
