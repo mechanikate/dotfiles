@@ -3,13 +3,16 @@ PBG='\033[45m'
 RST='\033[0m'
 usage() { echo "Usage: $0 [-i <yes|no>]" 1>&2; exit 1; }
 
-while getopts "i:" o; do
+while getopts "hi:" o; do
     case $o in
         i)
             i=${OPTARG}
 	    [[ "$i" =~ ([Yy]([Ee][Ss])?)|([Nn]([Oo])?) ]] || usage
             ;;
-       h | *)
+       	h) 
+	    usage
+	    ;;
+    	*)
 	    i="N"
             ;;
     esac
