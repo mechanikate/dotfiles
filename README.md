@@ -1,5 +1,11 @@
 <h1 align="center">mechanikate/dotfiles</h1>
-<img src="https://github.com/mechanikate/dotfiles/blob/main/example.png?raw=true" alt="Example photo" /><img src="https://github.com/mechanikate/dotfiles/blob/main/example-installscript.png?raw=true" alt="Example photo" />
+<table>
+ <tr>
+  <td><img src="https://github.com/mechanikate/dotfiles/blob/main/example.png?raw=true" alt="desktop example photo" height=300 /></td>
+  <td><img src="https://github.com/mechanikate/dotfiles/blob/main/example-installscript.png?raw=true" alt="installscript.sh example photo" height=300 /></td>
+ </tr>
+</table>
+
 <hr />
 
 Welcome to my dotfiles repo!
@@ -32,4 +38,5 @@ Or, if you *do* have the packages installed:
 ```
 The only time the install script *should* request sudo is when it's installing packages via `pacman` when asked to using the parameter `-i yes`.
 There is also a basic usage/help message by using `./installscript.sh -h`.
+
 
