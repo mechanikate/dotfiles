@@ -21,7 +21,12 @@ Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'xiyaowong/transparent.nvim'
+" Status Line
+Plug 'beauwilliams/statusline.lua'
 call plug#end()
 " Put all your `lua require('<xyz>') statements here! Make sure to include the following too:
 lua require('init')
 lua require("nano-theme").load()
+lua vim.o.laststatus=3
+" Unindenting with shift+tab
+inoremap <S-Tab> <C-d>
