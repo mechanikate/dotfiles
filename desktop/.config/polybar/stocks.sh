@@ -1,13 +1,10 @@
-~/.config/polybar/stocks-keys.sh
+source ~/.config/polybar/stocks-keys.sh
 
-stocks=("TMC" "OKLO" "GTLB")
 state_file="/tmp/stock_index"
 price_file="/tmp/stock_prices"
 market_open="09:30"
 market_close="16:00"
 timezone="America/New_York"
-api_key="V3JPVDG54NSPDANW"
-api_key_fh="d2egq1pr01qlu2quntv0d2egq1pr01qlu2quntvg"
 
 current_day=$(TZ=$timezone date +%u)
 current_time=$(TZ=$timezone date +%H:%M)
