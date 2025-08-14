@@ -28,7 +28,7 @@ git clone git@github.com:mechanikate/dotfiles.git
 cd dotfiles
 chmod +x installscript.sh
 ```
-And, if you don't have all of the added packages (e.g. [`neovim`](https://archlinux.org/packages/?name=neovim), [`polybar`](https://archlinux.org/packages/?name=polybar), [`i3-wm`](https://archlinux.org/packages/?name=i3-wm)) installed:
+And, if you don't have all of the added packages (e.g. [`neovim`](https://archlinux.org/packages/?name=neovim), [`polybar`](https://archlinux.org/packages/?name=polybar), [`i3-wm`](https://archlinux.org/packages/?name=i3-wm)) installed, this installs the packages for Arch only:
 ```bash
 ./installscript.sh -i y
 ```
