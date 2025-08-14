@@ -19,7 +19,7 @@ method = pipewire
 source = $(pactl list sources | grep -C 4 -e ": Monitor of Built-in Audio Analog Stereo" | rg '(Source #)(.*)' -or '$2')
  
 [general]
-bars = 70
+bars = ${1}
 overshoot = 100
 
 [output]

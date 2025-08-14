@@ -100,3 +100,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # add sylvfetch to path
 path+=("$HOME/runnables/")
+
+export PATH=$PATH:/home/kate/.spicetify

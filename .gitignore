@@ -7,4 +7,5 @@ terminal/.config/nvim/lua/lualine
 terminal/.config/nvim/lua/groups
 terminal/.config/nvim/nvim/autoload/
 terminal/.config/nvim/pack/
+desktop/.config/polybar/stocks-keys.sh
 addtorepo.sh

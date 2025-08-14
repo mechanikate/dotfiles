@@ -1,0 +1,74 @@
+~/.config/polybar/stocks-keys.sh
+stocks=("TMC" "OKLO" "GTLB")
+state_file="/tmp/stock_index"
+price_file="/tmp/stock_prices"
+market_open="09:30"
+market_close="16:00"
+timezone="America/New_York"
+api_key="V3JPVDG54NSPDANW"
+api_key_fh="d2egq1pr01qlu2quntv0d2egq1pr01qlu2quntvg"
+levels=("▁" "▂" "▃" "▄" "▅" "▆" "▇" "█")
+
+current_day=$(TZ=$timezone date +%u)   # 1=Mon ... 7=Sun
+current_time=$(TZ=$timezone date +%H:%M)
+
+if [[ $current_day -gt 5 ]] || [[ "$current_time" < "$market_open" ]] || [[ "$current_time" > "$market_close" ]]; then
+    exit 0
+fi
+if [[ ! -f $state_file ]]; then
+    echo 0 > "$state_file"
+fi
+index=$(<"$state_file")
+symbol="${stocks[$index]}"
+json=$(curl -s "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=$symbol&apikey=$api_key")
+price=$(echo "$json" | grep -oP '"05\. price": "\K[0-9.]+' | head -n1)
+[[ -n "$price" ]] && price=$(printf "%.2f" "$price")
+if [[ "$price" == "0.00" || -z "$price" ]]; then
+    json=$(curl -s "https://finnhub.io/api/v1/quote?symbol=$symbol&token=$api_key_fh")
+    price=$(echo "$json" | grep -oP '"c":\K[0-9.]+' | head -n1)
+    [[ -n "$price" ]] && price=$(printf "%.2f" "$price")
+fi
+declare -A last_prices
+if [[ -f $price_file ]]; then
+    while IFS=":" read -r s p; do
+        last_prices[$s]=$p
+    done < "$price_file"
+fi
+# === NEXT STOCK INDEX ===
+index=$(( (index + 1) % ${#stocks[@]} ))
+echo $index > "$state_file"
+last_price=${last_prices[$symbol]}
+change=0
+indicator=""
+if [[ -n "$last_price" ]]; then
+    change=$(echo "$price - $last_price" | bc -l)
+    percent_change=$(echo "scale=2; (($price - $last_price) / $last_price) * 100" | bc -l)
+    # block height
+    abs_change=$(echo "${percent_change#-}") # integer %
+    level_index=$(( abs_change ))
+    [[ $level_index -gt 7 ]] && level_index=7
+    block="${levels[$level_index]}"
+    if (( $(echo "$change > 0" | bc -l) )); then
+        indicator="%{F#00FF00}+$percent_change%{F-}"  # Green in Polybar
+    elif (( $(echo "$change < 0" | bc -l) )); then
+        indicator="%{F#FF0000}-$percent_change%{F-}"  # Red in Polybar
+    else
+        indicator="±0.00%"  # No color
+    fi
+
+fi
+
+if [[ -n "$price" ]]; then
+    echo "%{F#957DDA}$symbol%{F-} \$$price $indicator"
+else
+    echo "$symbol: N/A"
+fi
+last_prices[$symbol]=$price
+{
+    for s in "${!last_prices[@]}"; do
+        echo "$s:${last_prices[$s]}"
+    done
+} > "$price_file"
+
+index=$(( (index + 1) % ${#stocks[@]} ))
+echo $index > "$state_file"
