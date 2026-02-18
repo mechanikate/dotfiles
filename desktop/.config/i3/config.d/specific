@@ -1,0 +1,15 @@
+# nvidia gpu+drivers only
+exec export LIBVA_DRIVER_NAME=nvidia
+
+# my login script
+exec_always --no-startup-id ~/.login
+
+# openrgb (disabled)
+#exec killall openrgb 
+#exec_always --no-startup-id openrgb --startminimized --profile "Main" &
+
+# defualt to floating for steam (disabled)
+#for_window [class="steam"] floating enable
+
+# focus the child container
+#bindsym $mod+d focus child

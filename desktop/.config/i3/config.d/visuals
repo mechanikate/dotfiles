@@ -1,0 +1,27 @@
+#                       class   border  backgr. text indicator
+client.focused          $base05 #5bcefa $base00 $base05
+client.focused_inactive $base03 #f5a9b8 $base05 $base03
+client.unfocused        $base03 #f5a9b8 $base05 $base00
+client.urgent           $base01 #ffffff $base05 $base00
+
+# font
+font pango:monospace 8
+
+# blank spot opening
+bindsym $mod+ctrl+shift+1 open 
+
+# gaps
+gaps inner 5
+
+# polybar
+exec_always --no-startup-id killall polybar
+exec_always --no-startup-id /home/kate/launch_polybar.sh
+exec_always --no-startup-id picom --config /home/kate/.config/picom.conf 
+exec_always --no-startup-id /home/kate/.screenlayout/setlay.sh
+
+# blur
+exec --no-startup-id picom --config /home/kate/.config/picom.conf 
+exec feh --bg-scale ~/wallpaper/sylveon.jpg
+
+# border width
+default_border pixel 3

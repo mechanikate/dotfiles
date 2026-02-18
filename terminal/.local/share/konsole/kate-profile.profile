@@ -2,6 +2,7 @@
 ColorScheme=Breeze
 
 [General]
+Command=/usr/bin/zsh
 Name=kate-profile
 Parent=FALLBACK/
 
